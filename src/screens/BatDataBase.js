@@ -1,7 +1,7 @@
-// screens/DashboardScreen.js
 import React, { useState } from 'react';
-import { View, Text, TextInput, FlatList, Image, TouchableOpacity, ActivityIndicator, StyleSheet } from 'react-native';
+import { View, Text, TextInput, FlatList, Image, TouchableOpacity, ActivityIndicator } from 'react-native';
 import useSuperheroApi from '../hooks/SuperHeroApi';
+import styles from './style/BatStyles';
 
 export default function BatDataBase({ navigation }) {
   const [search, setSearch] = useState('');
@@ -40,26 +40,7 @@ export default function BatDataBase({ navigation }) {
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
       />
+      <Image source={require('../../assets/image/bat-logo.png')} style={styles.logo} /> 
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { padding: 20, flex: 1 },
-  input: {
-    backgroundColor: '#eee',
-    padding: 10,
-    borderRadius: 10,
-    marginBottom: 10,
-  },
-  card: {
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginBottom: 12,
-    backgroundColor: '#f8f8f8',
-    padding: 10,
-    borderRadius: 8,
-  },
-  image: { width: 60, height: 60, borderRadius: 30, marginRight: 10 },
-  name: { fontSize: 18 },
-});
