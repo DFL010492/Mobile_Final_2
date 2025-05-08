@@ -1,6 +1,6 @@
-// src/screens/Cadastro.js
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import styles from './style/CadastroStyle';
 
 export default function Cadastro({ navigation }) {
   const [email, setEmail] = useState('');
@@ -34,11 +34,3 @@ export default function Cadastro({ navigation }) {
     </View>
   );
 }
-
-const styles = StyleSheet.create({
-  container: { flex: 1, justifyContent: 'center', padding: 20 },
-  title: { fontSize: 32, textAlign: 'center', marginBottom: 30 },
-  input: { borderWidth: 1, borderColor: '#999', padding: 10, marginBottom: 15, borderRadius: 5 },
-  button: { backgroundColor: '#000', padding: 15, borderRadius: 5 },
-  buttonText: { color: '#fff', textAlign: 'center', fontWeight: 'bold' },
-});
