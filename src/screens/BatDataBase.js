@@ -26,6 +26,7 @@ export default function BatDataBase({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Text style={styles.title}>Bem-vindo ao BatDataBase!</Text>
       <TextInput
         placeholder="Digite o nome do herói"
         value={search}
