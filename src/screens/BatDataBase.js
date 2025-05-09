@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { View, Text, TextInput, FlatList, Image, TouchableOpacity, ActivityIndicator } from 'react-native';
 import useSuperheroApi from '../hooks/SuperHeroApi';
 import styles from './style/BatStyles';
+import Menu from '../components/Menu';
 
 export default function BatDataBase({ navigation }) {
   const [search, setSearch] = useState('');
@@ -26,6 +27,7 @@ export default function BatDataBase({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Menu navigation={navigation} />
       <Text style={styles.title}>Bem-vindo ao BatDataBase!</Text>
       <TextInput
         placeholder="Digite o nome do herói"
