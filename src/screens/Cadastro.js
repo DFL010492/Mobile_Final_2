@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
-import { View, Text, TextInput, TouchableOpacity } from 'react-native';
+import { View, Text, TextInput, TouchableOpacity, Alert } from 'react-native';
 import styles from './style/CadastroStyle';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../../firebaseConfig';
 
 export default function Cadastro({ navigation }) {
   const [email, setEmail] = useState('');
   const [senha, setSenha] = useState('');
 
   const handleCadastro = () => {
-    // Aqui normalmente salvaria o usuário. Vamos apenas navegar de volta.
-    alert('Cadastro realizado com sucesso!');
-    navigation.navigate('Login');
+    createUserWithEmailAndPassword(auth, email, senha)
+      .then((userCredential) => {
+        const user = userCredential.user;
+        console.log('Usuário cadastrado:', user.email);
+        Alert.alert('Sucesso', 'Cadastro realizado com sucesso!');
+        navigation.replace('BatDataBase');
+      })
+      .catch((error) => {
+        console.log('Erro ao cadastrar:', error.message);
+        Alert.alert('Erro no cadastro', error.message);
+      });
   };
 
   return (
@@ -20,6 +30,8 @@ export default function Cadastro({ navigation }) {
         placeholder="Email"
         onChangeText={setEmail}
         value={email}
+        autoCapitalize="none"
+        keyboardType="email-address"
       />
       <TextInput
         style={styles.input}
