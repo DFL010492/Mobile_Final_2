@@ -14,11 +14,31 @@ export default function AppNavigator() {
   return (
     <NavigationContainer>
       <Stack.Navigator initialRouteName="Login">
-        <Stack.Screen name="Login" component={LoginScreen} options={{ headerShown: false }}/>
-        <Stack.Screen name="Cadastro" component={RegisterScreen} options={{ headerShown: true}} />
-        <Stack.Screen name="BatDataBase" component={BatDataBase} options={{ headerShown: true }} />
-        <Stack.Screen name="Perfil" component={Perfil} options={{ headerShown: true }} />
-        <Stack.Screen name="Config" component={Config} options={{ headerShown: true }} />
+        <Stack.Screen name="Login" component={LoginScreen} options={{ 
+          headerShown: false, 
+          animation:'slide_from_bottom',
+          presentation: 'modal'
+          }}/>
+        <Stack.Screen name="Cadastro" component={RegisterScreen} options={{ 
+          headerShown: true, 
+          animation:'slide_from_bottom',
+          presentation: 'modal'
+          }}/>
+        <Stack.Screen name="BatDataBase" component={BatDataBase} options={{ 
+          headerShown: true, 
+          animation:'slide_from_bottom',
+          presentation: 'modal'
+          }}/>
+        <Stack.Screen name="Perfil" component={Perfil} options={{ 
+          headerShown: true, 
+          animation:'slide_from_bottom',
+          presentation: 'modal'
+          }}/>
+        <Stack.Screen name="Config" component={Config} options={{ 
+          headerShown: true, 
+          animation:'slide_from_bottom',
+          presentation: 'modal'
+          }}/>
 
       </Stack.Navigator>
     </NavigationContainer>

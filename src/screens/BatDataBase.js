@@ -3,6 +3,7 @@ import { View, Text, TextInput, FlatList, Image, TouchableOpacity, ActivityIndic
 import useSuperheroApi from '../hooks/SuperHeroApi';
 import styles from './style/BatStyles';
 import Menu from '../components/Menu';
+import BatmanLoading from '../components/LoadingOver';
 
 export default function BatDataBase({ navigation }) {
   const [search, setSearch] = useState('');
@@ -36,14 +37,13 @@ export default function BatDataBase({ navigation }) {
         onSubmitEditing={handleSearch}
         style={styles.input}
       />
-      {loading && <ActivityIndicator size="large" color="blue" />}
+      {loading && <BatmanLoading />}
       {error && <Text style={{ color: 'red' }}>{error}</Text>}
       <FlatList
         data={data}
         keyExtractor={(item) => item.id}
         renderItem={renderItem}
       />
-      <Image source={require('../../assets/image/bat-logo.png')} style={styles.logo} /> 
     </View>
   );
 }

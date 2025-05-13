@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 
 // Use quando usar no modo WEB mas precisa acessar https://cors-anywhere.herokuapp.com/corsdemo e clicar no 'Request temporary access to the demo server' para liberar o acesso
-const BASE_URL = 'https://cors-anywhere.herokuapp.com/http://superheroapi.com/api/eb0e3fae3b9e93fe756478a979364214';
+//const BASE_URL = 'https://cors-anywhere.herokuapp.com/http://superheroapi.com/api/eb0e3fae3b9e93fe756478a979364214';
 
 
 // URL da API do Super-Herói use quando usar mobile
-// const BASE_URL = 'https://superheroapi.com/api/eb0e3fae3b9e93fe756478a979364214';
+const BASE_URL = 'https://superheroapi.com/api/eb0e3fae3b9e93fe756478a979364214';
 
 export default function useSuperheroApi(searchName) {
   const [data, setData] = useState(null);
